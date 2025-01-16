@@ -1,6 +1,7 @@
 const conextion=require("./db")
 const express=require("express")
 const cors=require('cors')
+const conectar = require("./db")
 
 const app=express()
 app.use(express.json())
@@ -34,6 +35,31 @@ app.post("/insert",(req,res)=>{
     }
   })
 })
+app.put("/usuarios/update/:id",(req,res)=>{
+  const {id}=req.params
+  const {nombre}=req.body
+    if(!nombre){
+    return res.status(400).json({message:"hubo un error en la insercion de datos"})
+  }
+  const queryUpdate=` UPDATE usuarios
+                     SET nombre = ?
+                     where id=? `
+  conectar.query(queryUpdate,[nombre,id],(err,result)=>{
+    if(err){
+      console.log("hubo un error")
+      res.status(500).json("hubo un erro de parte del servidor")
+    }
+    else{
+      if(result.affectedRows>0){
+        res.status(201).json({message:"datos actualizados",
+          actualizoID:{id:result.insertId,nombre}})
+      }else{
+      res.status(404).json({message:"No se encontro el ID"})
+      }
+    }
+  })
+})
+
 const port=3006
 app.listen(port,()=>{
   console.log(`ingrese al siguiente link http://localhost:${port}`)
