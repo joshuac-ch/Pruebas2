@@ -1,7 +1,7 @@
 <!--Lista de Usuarios de backned-->
 <template>
   <h2>Welcome to Users</h2>
-    <ul>
+    <ul class="lista">
       <li v-for="u in usuarios" :key="u.id">
         {{ u.nombre }}
       </li>
@@ -30,4 +30,11 @@ export default{
 
 </script>
 <style>
+.lista{
+  display: flex;
+  flex-direction: column;
+  li{
+    columns: 2;
+  }
+}
 </style>

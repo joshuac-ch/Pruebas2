@@ -8,7 +8,7 @@ import { RouterLink } from 'vue-router';
     <ul>
       <li><RouterLink to="contador">Contador</RouterLink></li>
       <li><RouterLink to="usuarios">Usuarios</RouterLink></li>
-
+      <li><RouterLink to="form">Formulario de usuarios</RouterLink></li>
     </ul>
 <RouterView></RouterView>
   </div>
