@@ -35,6 +35,41 @@ app.post("/insert",(req,res)=>{
     }
   })
 })
+app.put("/update/use/:id/:nombre",(req,res)=>{
+  const {id}=req.params
+  const {nombre}=req.params
+  const query2update=`
+                      UPDATE usuarios
+                      SET nombre = ?
+                      WHERE id = ?
+    `
+    if(!nombre){
+      res.status(404).json({message:"todos los campos deben estar llenos"})
+    }
+    conextion.query(query2update,[nombre,id],(err,result)=>{
+      if(err){
+        res.status(500).json({message:err.message})
+      }else{
+        if(result.affectedRows>0){
+          res.status(201).json({message:"datos actualizados"})
+        }else{
+          res.status(404).json({message:"no se encontro ese ID"})
+        }
+    }
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
 app.put("/usuarios/update/:id",(req,res)=>{
   const {id}=req.params
   const {nombre}=req.body
