@@ -35,9 +35,9 @@ app.post("/insert",(req,res)=>{
     }
   })
 })
-app.put("/update/use/:id/:nombre",(req,res)=>{
+app.put("/update/use/:id",(req,res)=>{
   const {id}=req.params
-  const {nombre}=req.params
+  const {nombre}=req.body
   const query2update=`
                       UPDATE usuarios
                       SET nombre = ?
