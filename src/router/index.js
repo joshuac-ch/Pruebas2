@@ -42,12 +42,12 @@ const router = createRouter({
       component: () => import('../components/modules/formulario/ActualizarForm.vue'),
     },
     {
-      path: '/usuarios2',
-      name: 'usuarios2',
+      path: '/pruebas',
+      name: 'pruebas',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../components/modules/PRUEBAS/Formpruebas.vue'),
+      component: () => import('../components/modules/PRUEBAS/PruebaUpdate.vue'),
     },
   ],
 })

@@ -35,64 +35,26 @@ app.post("/insert",(req,res)=>{
     }
   })
 })
-app.put("/update/use/:id",(req,res)=>{
+app.put("/pruebas/update/user/:id/",(req,res)=>{
   const {id}=req.params
   const {nombre}=req.body
-  const query2update=`
-                      UPDATE usuarios
-                      SET nombre = ?
-                      WHERE id = ?
-    `
-    if(!nombre){
-      res.status(404).json({message:"todos los campos deben estar llenos"})
-    }
-    conextion.query(query2update,[nombre,id],(err,result)=>{
-      if(err){
-        res.status(500).json({message:err.message})
-      }else{
-        if(result.affectedRows>0){
-          res.status(201).json({message:"datos actualizados"})
-        }else{
-          res.status(404).json({message:"no se encontro ese ID"})
-        }
-    }
-    })
-})
-
-
-
-
-
-
-
-
-
-
-
-
-app.put("/usuarios/update/:id",(req,res)=>{
-  const {id}=req.params
-  const {nombre}=req.body
-    if(!nombre){
-    return res.status(400).json({message:"hubo un error en la insercion de datos"})
+  if(!id||!nombre){
+    res.status(404).json({message:"los datos no se llenaron correctamente"})
   }
-  const queryUpdate=` UPDATE usuarios
-                     SET nombre = ?
-                     where id=? `
-  conectar.query(queryUpdate,[nombre,id],(err,result)=>{
+  conextion.query("UPDATE usuarios SET nombre=? WHERE id=?",[nombre,id],(err,result)=>{
     if(err){
-      console.log("hubo un error")
-      res.status(500).json("hubo un erro de parte del servidor")
-    }
-    else{
+      res.status(500).json({message:"hubo un erro de parte del servidor"})
+    }else{
       if(result.affectedRows>0){
-        res.status(201).json({message:"datos actualizados",
-          actualizoID:{id:result.insertId,nombre}})
+        console.log("datos actualizaods correcatemne",{id:result.insertId,"Nombre":nombre})
+      res.status(201).json({message:"se realizo la conextion correta"})
       }else{
-      res.status(404).json({message:"No se encontro el ID"})
+        console.log("no se encontro el id")
       }
+
     }
   })
+
 })
 
 const port=3006

@@ -10,7 +10,7 @@ import { RouterLink } from 'vue-router';
       <li><RouterLink to="usuarios">Usuarios</RouterLink></li>
       <li><RouterLink to="form">Formulario de usuarios</RouterLink></li>
       <li><RouterLink to="update">Formulario de usuarios para Actualizadr</RouterLink></li>
-      <li><RouterLink to="usuarios2">Usuarios de pruebas</RouterLink></li>
+      <li><RouterLink to="pruebas">Usuarios de pruebas</RouterLink></li>
 
     </ul>
 <RouterView></RouterView>
