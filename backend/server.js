@@ -2,7 +2,7 @@ const conextion=require("./db")
 const express=require("express")
 const cors=require('cors')
 const conectar = require("./db")
-
+//conexiones con el backend
 const app=express()
 app.use(express.json())
 app.use(cors())
