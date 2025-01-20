@@ -1,4 +1,6 @@
-# pruebas en vue3
+# pruebas en vue3 uso de servicios Api
+# conexión con el backend
+# conexión con el usuario 
 
 This template should help get you started developing with Vue 3 in Vite.
 
