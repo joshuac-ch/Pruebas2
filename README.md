@@ -3,6 +3,7 @@
 # conexión con el usuario 
 # Todos los componentes se encuentra divididos en modules
 #Todas las rutas están en el componente Slider
+#Las rutas se encuentran configuradas en el archivo index de la carpeta router
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
