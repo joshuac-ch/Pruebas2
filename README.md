@@ -2,6 +2,7 @@
 # conexión con el backend
 # conexión con el usuario 
 # Todos los componentes se encuentra divididos en modules
+#Todas las rutas están en el componente Slider
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
