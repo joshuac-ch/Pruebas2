@@ -1,7 +1,7 @@
 # pruebas en vue3 uso de servicios Api
 # conexión con el backend
 # conexión con el usuario 
-
+# Todos los componentes se encuentra divididos en modules
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
